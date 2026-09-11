@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Home",
+    "browse": "Browse",
+    "mapView": "Map View",
+    "messages": "Messages",
+    "myOrders": "My Orders",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "common": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "loading": "Loading...",
+    "close": "Close"
+  },
+  "landing": {
+    "title": "Connect Farmers & Consumers",
+    "subtitle": "Fresh produce directly from farms to your doorstep",
+    "getFarmer": "I'm a Farmer",
+    "getBuyer": "I'm a Buyer"
+  },
+  "products": {
+    "browseProducts": "Browse Products",
+    "searchPlaceholder": "Search products or farmers...",
+    "addToCart": "Purchase",
+    "chatWithFarmer": "Chat with Farmer",
+    "available": "Available",
+    "noProducts": "No products available yet. Check back later!",
+    "noMatch": "No products found matching your criteria."
+  },
+  "farmer": {
+    "myProducts": "My Products",
+    "addProduct": "Add Product",
+    "analytics": "Analytics",
+    "manageOrders": "Manage Orders"
+  },
+  "analytics": {
+    "dashboard": "Analytics Dashboard",
+    "totalProducts": "Total Products",
+    "totalOrders": "Total Orders",
+    "totalRevenue": "Total Revenue",
+    "avgRating": "Avg Rating",
+    "priceComparison": "Price Comparison by Category",
+    "salesTrend": "Sales Trend (Last 7 Days)",
+    "topProducts": "Top Selling Products",
+    "yourPrice": "Your Price",
+    "marketAvg": "Market Avg",
+    "noData": "No data available"
+  },
+  "orders": {
+    "myOrders": "My Orders",
+    "orderNumber": "Order",
+    "total": "Total",
+    "status": "Status",
+    "items": "Items",
+    "allOrders": "All Orders",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled"
+  }
+}

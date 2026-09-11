@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 55" width="230" height="55">
+  <!-- Unified Dark Green Text "K4k" -->
+  <text x="0" y="43" fill="#004d25" font-family="Arial Black, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="42" letter-spacing="-1.5">K4k</text>
+  
+  <!-- Green Leaf symbolizing and acting as the dot of 'i' (original dot of i removed) -->
+  <g transform="translate(85, 2)">
+    <path d="M 4,16 C 4,6 15,1 21,1 C 21,10 14,18 4,16 Z" fill="#16a34a" />
+    <path d="M 5,15 Q 11,9 18,3" stroke="#ffffff" stroke-width="1.3" fill="none" opacity="0.75" />
+  </g>
+  
+  <!-- Dotless 'i' stem and 'ssan': &#305; is the dotless i character (U+0131) -->
+  <text x="89" y="43" fill="#004d25" font-family="Arial Black, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="42" letter-spacing="-1.5">&#305;ssan</text>
+</svg>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Buyer Registration – K4kissan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child  { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f0f3ff",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#ffdbcb",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#00210d",
+            "secondary": "#a04100",
+            "primary-fixed": "#9bf6b2",
+            "on-secondary-container": "#682800",
+            "on-secondary-fixed-variant": "#7a3000",
+            "outline": "#6f7a6f",
+            "inverse-on-surface": "#ecf1ff",
+            "on-secondary-fixed": "#341000",
+            "secondary-container": "#ff8340",
+            "outline-variant": "#becabd",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#005228",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "surface-container-highest": "#d8e3fb",
+            "background": "#f9f9ff",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "surface-tint": "#016d38",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#ffdcc3",
+            "surface-container-high": "#dee8ff",
+            "primary-container": "#1b7a43",
+            "tertiary-fixed-dim": "#ffb77d",
+            "inverse-surface": "#263143",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#ffe8d8",
+            "on-tertiary-fixed": "#2f1500",
+            "on-surface-variant": "#3f4940",
+            "surface": "#f9f9ff",
+            "on-primary-container": "#abffbf",
+            "inverse-primary": "#80d998",
+            "primary": "#006030",
+            "secondary-fixed-dim": "#ffb693",
+            "surface-variant": "#d8e3fb",
+            "primary-fixed-dim": "#80d998",
+            "surface-dim": "#cfdaf2",
+            "surface-container": "#e7eeff",
+            "on-background": "#111c2d",
+            "tertiary": "#7f4300",
+            "tertiary-container": "#a25700",
+            "on-surface": "#111c2d"
+          },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          spacing: {
+            "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-2xl": "3rem",
+            "space-xs": "0.5rem", "space-sm": "0.75rem", "gutter-tablet": "1.5rem",
+            "gutter-desktop": "2rem", "space-xl": "2rem", "space-md": "1rem",
+            "container-max": "1280px", "space-3xl": "4rem", "space-2xs": "0.25rem"
+          },
+          fontFamily: {
+            "label-lg": ["Inter"], "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Inter"],
+            "body-sm": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-xl": ["Inter"]
+          },
+          fontSize: {
+            "label-lg":  ["14px", { lineHeight: "20px", letterSpacing: "0.01em",  fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-xl-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "body-md":   ["14px", { lineHeight: "20px", letterSpacing: "0em",     fontWeight: "400" }],
+            "display-lg":["44px", { lineHeight: "52px", letterSpacing: "-0.03em", fontWeight: "800" }],
+            "headline-xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-sm": ["18px", { lineHeight: "26px", letterSpacing: "0em",   fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-lg":   ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "body-sm":   ["12px", { lineHeight: "18px", letterSpacing: "0.01em",  fontWeight: "400" }],
+            "label-sm":  ["11px", { lineHeight: "14px", letterSpacing: "0.03em",  fontWeight: "600" }],
+            "label-md":  ["12px", { lineHeight: "16px", letterSpacing: "0.02em",  fontWeight: "600" }],
+            "body-xl":   ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- ── Header ── -->
+  <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 max-w-container-max mx-auto px-gutter-mobile md:px-gutter-tablet lg:px-gutter-desktop flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm">
+        <a href="/" class="flex items-center gap-space-xs">
+          <img alt="K4kissan Logo" class="h-8 w-auto object-contain" src="/images/k4kissan-logo.svg"/>
+        </a>
+      </div>
+      <div class="flex items-center gap-space-md">
+        <a href="/login" class="px-4 py-2 bg-primary text-on-primary rounded-lg text-xs font-semibold hover:bg-primary-container transition">
+          Back to Login
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-16 flex-1 bg-surface">
+    <div class="flex flex-col w-full">
+
+      <!-- Hero Banner -->
+      <div class="w-full max-w-5xl mx-auto px-gutter-mobile md:px-gutter-tablet py-space-xl">
+        <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary via-primary-container to-surface-tint text-on-primary shadow-lg p-space-lg md:p-space-xl mb-space-lg">
+          <div class="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-on-primary/5 pointer-events-none blur-2xl"></div>
+          <div class="absolute right-1/4 -bottom-16 w-80 h-80 rounded-full bg-primary-fixed/10 pointer-events-none blur-3xl"></div>
+          <div class="relative z-10 flex flex-col gap-space-md">
+            <div class="flex flex-wrap items-center justify-between gap-space-sm">
+              <span class="px-space-sm py-space-2xs rounded-full bg-on-primary/15 backdrop-blur-md text-primary-fixed font-label-sm tracking-wider uppercase flex items-center gap-space-2xs">
+                <span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+                BUYER &amp; ENTERPRISE SIGN-UP PORTAL
+              </span>
+            </div>
+            <div>
+              <h1 class="font-headline-lg text-headline-lg text-on-primary tracking-tight">
+                Register as a Verified Buyer on K4kissan
+              </h1>
+              <p class="font-body-md text-body-md text-on-primary/85 max-w-3xl mt-space-2xs leading-relaxed">
+                Direct farmer &amp; FPO procurement, transparent farm-gate quality assays, automated smart escrow settlement, and zero intermediary commissions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <form class="flex flex-col gap-space-xl" onsubmit="return handleBuyerSubmit(event);">
+
+          <!-- SECTION 1: Personal & Account Credentials -->
+          <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col gap-space-lg">
+            <div class="flex items-center gap-space-sm border-b border-surface-variant pb-space-md">
+              <div class="w-10 h-10 rounded-lg bg-primary-fixed/30 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">person</span>
+              </div>
+              <div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">1. Personal &amp; Account Credentials</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">व्यक्तिगत विवरण एवं क्रेडेंशियल</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+              <div class="flex flex-col gap-space-2xs md:col-span-2">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Full Legal Name (पूरा नाम) *</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. Rajesh Kumar Sharma" required type="text"/>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Email Address (ईमेल) *</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="rajesh.sharma@example.com" required type="email"/>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Mobile Number (मोबाइल नंबर) *</label>
+                <div class="flex gap-space-xs">
+                  <span class="h-12 px-space-sm bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant font-label-md text-on-surface-variant">+91</span>
+                  <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface flex-1 focus:outline-none focus:ring-2 focus:ring-primary transition-all" pattern="[0-9]{10}" placeholder="9876543210" required type="tel"/>
+                  <button class="px-space-md h-12 bg-primary text-on-primary font-label-md rounded-lg hover:bg-surface-tint transition-colors shrink-0" type="button">Get OTP</button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Password (पासवर्ड) *</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" minlength="8" placeholder="At least 8 characters" required type="password"/>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Confirm Password (पासवर्ड पुष्टि करें) *</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" minlength="8" placeholder="Re-enter password" required type="password"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: Delivery Address & Pin-Code Geofencing -->
+          <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col gap-space-lg">
+            <div class="flex items-center gap-space-sm border-b border-surface-variant pb-space-md">
+              <div class="w-10 h-10 rounded-lg bg-primary-fixed/30 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">2. Delivery Address &amp; Geofencing</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">वितरण पता एवं पिनकोड जियोफेंसिंग</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+              <div class="flex flex-col gap-space-2xs md:col-span-2">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Street Address / Apartment / Society (पता) *</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="Flat No., Building Name, Street, Landmark" required type="text"/>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">State (राज्य) *</label>
+                <select class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                  <option>Madhya Pradesh</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Rajasthan</option>
+                  <option>Punjab</option>
+                  <option>Haryana</option>
+                  <option>Gujarat</option>
+                  <option>Bihar</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">District (जिला) *</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. Sehore, Bhopal, Indore" required type="text"/>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">PIN Code (पिन कोड) *</label>
+                <div class="flex gap-space-xs">
+                  <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface flex-1 focus:outline-none focus:ring-2 focus:ring-primary transition-all" pattern="[0-9]{6}" placeholder="466001" required type="text"/>
+                  <button class="px-space-md h-12 bg-surface-container text-primary font-label-md rounded-lg hover:bg-surface-container-high transition-colors shrink-0 flex items-center gap-space-2xs" type="button">
+                    <span class="material-symbols-outlined text-[18px]">near_me</span> Verify Zone
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Preferred Delivery Time Slot (समय स्लॉट) *</label>
+                <select class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                  <option>Morning (6:00 AM – 9:00 AM)</option>
+                  <option>Afternoon (12:00 PM – 3:00 PM)</option>
+                  <option>Evening (5:00 PM – 8:00 PM)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: Procurement Preferences -->
+          <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col gap-space-lg">
+            <div class="flex items-center gap-space-sm border-b border-surface-variant pb-space-md">
+              <div class="w-10 h-10 rounded-lg bg-primary-fixed/30 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">shopping_bag</span>
+              </div>
+              <div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">3. Procurement Preferences</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">खरीद प्राथमिकताएं</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Primary Crop Interest (मुख्य फसल)</label>
+                <select class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                  <option>Rice (चावल)</option>
+                  <option>Wheat (गेहूं)</option>
+                  <option>Maize (मक्का)</option>
+                  <option>Sorghum (ज्वार)</option>
+                  <option>Pearl Millet (बाजरा)</option>
+                  <option>Finger Millet (रागी)</option>
+                  <option>Barley (जौ)</option>
+                  <option>Multiple Crops</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-space-2xs">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Monthly Volume Required (kg)</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. 5000" type="number" min="1"/>
+              </div>
+              <div class="flex flex-col gap-space-2xs md:col-span-2">
+                <label class="font-label-md text-label-md text-on-surface font-semibold">Business / GST Registration Number (optional)</label>
+                <input class="h-12 px-space-md rounded-lg bg-surface border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. 23AAAAA0000A1Z5"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col gap-space-xs">
+            <h3 class="font-headline-md text-headline-md text-on-surface">Ready to Join?</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Create your account to unlock direct FPO wholesale pricing at retail convenience.</p>
+            <div class="flex flex-col md:flex-row gap-space-md mt-space-sm">
+              <button class="w-full h-14 bg-primary text-on-primary font-headline-sm rounded-lg shadow-md hover:bg-surface-tint transition-all flex items-center justify-center gap-space-xs" type="submit">
+                <span class="material-symbols-outlined">how_to_reg</span> Create Buyer Account
+              </button>
+              <button class="w-full h-14 bg-surface text-on-surface-variant font-label-lg rounded-lg border border-outline-variant hover:bg-surface-container-low transition-all" type="reset">Clear Form</button>
+            </div>
+            <div class="flex items-center justify-center pt-space-sm border-t border-surface-variant mt-space-sm">
+              <span class="font-body-md text-body-md text-on-surface-variant">
+                Already have an account? <a class="font-label-lg text-primary hover:underline" href="/login">Sign In</a>
+              </span>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.03)] py-space-lg">
+    <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-tablet lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-md">
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-space-md">
+        <div class="flex items-center gap-space-xs text-on-surface-variant">
+          <span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+          <span class="font-label-sm text-label-sm font-semibold">256-Bit SSL Encrypted</span>
+        </div>
+        <div class="flex items-center gap-space-xs text-on-surface-variant">
+          <span class="material-symbols-outlined text-primary text-[18px]">agriculture</span>
+          <span class="font-label-sm text-label-sm font-semibold">Ministry of Agriculture Compliant</span>
+        </div>
+        <div class="flex items-center gap-space-xs text-on-surface-variant">
+          <span class="material-symbols-outlined text-primary text-[18px]">toll</span>
+          <span class="font-label-sm text-label-sm font-semibold">NPCI FASTag Ready</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-xs text-on-surface-variant">
+        <span class="material-symbols-outlined text-secondary text-[18px]">call</span>
+        <span class="font-label-md text-label-md">
+          Buyer Helpline: <a class="font-label-md text-label-md font-bold text-primary hover:underline" href="tel:18001803366">1800-180-3366</a> (Toll Free)
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script src="/js/k4-firebase.js"></script>
+  <script>window.K4Firebase.autofillForms();</script>
+  <script>
+    async function handleBuyerSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const details = window.K4Firebase.collectForm(form);
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Saving buyer details...';
+      }
+      try {
+        await window.K4Firebase.saveProfile({
+          role: 'Buyer',
+          details: details,
+          fullName: details.full_legal_name_ || details.full_name || '',
+          phone: details.mobile_number_ || details.phone || '',
+          redirect: '/products'
+        });
+      } catch (err) {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Create Buyer Account';
+        }
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>

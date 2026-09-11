@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Custom CSS variables — used throughout the app */
+:root {
+  --color-gray-50: #f9fafb;
+  --color-gray-900: #111827;
+  --color-emerald-600: #059669;
+}
+
+body {
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-900);
+}
+
+/* ── Leaflet map marker reset ───────────────────────────────── */
+.route-marker {
+  background: transparent;
+  border: 0;
+}
+
+.route-marker span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgb(17 24 39 / 35%);
+}
+
+/* ── Smooth page transitions ────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+/* ── Scrollbar styling ──────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

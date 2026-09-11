@@ -1,0 +1,70 @@
+{
+    "nav": {
+        "home": "होम",
+        "browse": "ब्राउज़",
+        "mapView": "मैप व्यू",
+        "messages": "संदेश",
+        "myOrders": "मेरे ऑर्डर",
+        "login": "लॉगिन",
+        "logout": "लॉगआउट"
+    },
+    "common": {
+        "add": "जोड़ें",
+        "edit": "संपादित करें",
+        "delete": "हटाएं",
+        "save": "सहेजें",
+        "cancel": "रद्द करें",
+        "submit": "जमा करें",
+        "search": "खोजें",
+        "filter": "फ़िल्टर",
+        "loading": "लोड हो रहा है...",
+        "close": "बंद करें"
+    },
+    "landing": {
+        "title": "किसानों और उपभोक्ताओं को जोड़ें",
+        "subtitle": "खेतों से सीधे आपके दरवाजे तक ताजा उपज",
+        "getFarmer": "मैं एक किसान हूं",
+        "getBuyer": "मैं एक खरीदार हूं"
+    },
+    "products": {
+        "browseProducts": "उत्पाद ब्राउज़ करें",
+        "searchPlaceholder": "उत्पाद या किसान खोजें...",
+        "addToCart": "कार्ट में जोड़ें",
+        "chatWithFarmer": "किसान से चैट करें",
+        "available": "उपलब्ध",
+        "noProducts": "अभी तक कोई उत्पाद उपलब्ध नहीं है। बाद में वापस जांचें!",
+        "noMatch": "आपकी मानदंडों से मेल खाने वाला कोई उत्पाद नहीं मिला।"
+    },
+    "farmer": {
+        "myProducts": "मेरे उत्पाद",
+        "addProduct": "उत्पाद जोड़ें",
+        "analytics": "विश्लेषण",
+        "manageOrders": "ऑर्डर प्रबंधित करें"
+    },
+    "analytics": {
+        "dashboard": "विश्लेषण डैशबोर्ड",
+        "totalProducts": "कुल उत्पाद",
+        "totalOrders": "कुल ऑर्डर",
+        "totalRevenue": "कुल राजस्व",
+        "avgRating": "औसत रेटिंग",
+        "priceComparison": "श्रेणी के अनुसार मूल्य तुलना",
+        "salesTrend": "बिक्री प्रवृत्ति (पिछले 7 दिन)",
+        "topProducts": "शीर्ष बिक्री उत्पाद",
+        "yourPrice": "आपकी कीमत",
+        "marketAvg": "बाजार औसत",
+        "noData": "कोई डेटा उपलब्ध नहीं"
+    },
+    "orders": {
+        "myOrders": "मेरे ऑर्डर",
+        "orderNumber": "ऑर्डर",
+        "total": "कुल",
+        "status": "स्थिति",
+        "items": "आइटम",
+        "allOrders": "सभी ऑर्डर",
+        "pending": "लंबित",
+        "confirmed": "पुष्टि",
+        "shipped": "भेजा गया",
+        "delivered": "डिलीवर",
+        "cancelled": "रद्द"
+    }
+}

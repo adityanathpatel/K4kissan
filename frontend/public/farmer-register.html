@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Registration & Verification Portal</title>
+  <!-- Google Fonts & Tailwind CSS CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#1b7a43',
+              dark: '#145e33',
+              light: '#e8f5ed',
+              accent: '#22c55e',
+            },
+            surface: {
+              DEFAULT: '#f9f9ff',
+              container: '#ffffff',
+              muted: '#f1f5f9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- FontAwesome Icons for clean UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#f4f7f5] text-slate-800 font-sans min-h-screen py-8 px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center">
+
+  <!-- Top Brand Navigation Header -->
+  <div class="w-full max-w-3xl mb-6 flex items-center justify-between gap-3">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/images/k4kissan-logo.svg" alt="K4kissan" class="h-8 w-auto" />
+    </a>
+    <a href="/login" class="px-4 py-1.5 bg-emerald-700 text-white rounded-lg text-xs font-semibold hover:bg-emerald-800 transition">
+      Back to Login
+    </a>
+  </div>
+
+  <!-- Main Farmer Form Container -->
+  <main class="w-full max-w-3xl bg-white rounded-2xl shadow-sm border border-slate-200/90 overflow-hidden">
+    
+    <!-- Form Header -->
+    <div class="bg-gradient-to-r from-emerald-800 to-emerald-700 text-white px-8 py-7">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-[11px] font-semibold px-2.5 py-0.5 rounded uppercase tracking-wider mb-2">
+            Farmer Sign-Up Portal (किसान पंजीकरण)
+          </span>
+          <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2.5">
+            Create Verified Farmer Account
+          </h1>
+          <p class="text-emerald-100 text-xs mt-1.5 max-w-xl leading-relaxed">
+            Direct buyer linkage, guaranteed escrow payments, and zero middleman commissions. Connect your Khatauni land record for instant verification.
+          </p>
+        </div>
+        <div class="hidden sm:flex flex-col items-end text-right bg-black/15 p-2.5 rounded-xl border border-white/10">
+          <span class="text-[11px] text-emerald-200 font-medium">Role Selected</span>
+          <span class="text-sm font-bold text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-tractor text-emerald-300"></i> Farmer / FPO
+          </span>
+        </div>
+      </div>
+
+      <!-- Step Indicator Ribbon -->
+      <div class="mt-6 pt-5 border-t border-white/15 grid grid-cols-4 gap-2 text-center text-[11px] font-medium">
+        <div class="flex flex-col items-center gap-1 text-emerald-200">
+          <span class="w-5 h-5 rounded-full bg-white text-emerald-800 font-bold flex items-center justify-center text-[10px]">1</span>
+          <span class="text-white font-semibold">Personal</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-emerald-200">
+          <span class="w-5 h-5 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-[10px]">2</span>
+          <span>Land / Khatauni</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-emerald-200">
+          <span class="w-5 h-5 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-[10px]">3</span>
+          <span>Bank & DBT</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-emerald-200">
+          <span class="w-5 h-5 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-[10px]">4</span>
+          <span>Crops & Voice</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Registration Form -->
+    <form class="p-6 sm:p-8 space-y-8" onsubmit="return handleFarmerSubmit(event);">
+
+      <!-- SECTION 1: Personal & Identity Details -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-md bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-bold">1</div>
+            <div>
+              <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">Farmer Identity & Contact Details</h2>
+              <p class="text-xs text-slate-500">व्यक्तिगत जानकारी एवं मोबाइल सत्यापन</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+            Mandatory Step
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Full Name -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Full Name (पूरा नाम) <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 text-xs">
+                <i class="fa-regular fa-user"></i>
+              </span>
+              <input type="text" id="farmer-name" placeholder="e.g., Ramesh Chandra Patel" class="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 placeholder-slate-400 transition" required>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Must match your Aadhaar or Land Record name</p>
+          </div>
+
+          <!-- Mobile Number with OTP -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Mobile Number (मोबाइल नंबर) <span class="text-red-500">*</span>
+            </label>
+            <div class="flex gap-2">
+              <div class="relative flex-1">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 text-xs font-medium">
+                  +91
+                </span>
+                <input type="tel" id="farmer-phone" placeholder="98765 43210" class="w-full pl-11 pr-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 placeholder-slate-400 transition" required>
+              </div>
+              <button type="button" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold whitespace-nowrap transition flex items-center gap-1 shadow-2xs">
+                <i class="fa-solid fa-paper-plane text-[10px]"></i> Send OTP
+              </button>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">For instant dispatch alerts & escrow payment SMS</p>
+          </div>
+
+          <!-- Aadhaar Number -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Aadhaar Card Number (आधार संख्या) <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 text-xs">
+                <i class="fa-regular fa-id-card"></i>
+              </span>
+              <input type="text" id="farmer-aadhaar" placeholder="XXXX - XXXX - 1234" class="w-full pl-9 pr-24 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 placeholder-slate-400 transition">
+              <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[11px] font-semibold text-emerald-700">
+                <i class="fa-solid fa-shield-check mr-1"></i> UIDAI e-KYC
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">256-bit encrypted. Used for direct DBT authentication.</p>
+          </div>
+
+          <!-- Farmer Category / Type -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Farmer Category (किसान वर्ग) <span class="text-red-500">*</span>
+            </label>
+            <select id="farmer-category" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-700 transition">
+              <option value="individual_small">Marginal / Small Farmer (&lt; 2 Hectares)</option>
+              <option value="individual_medium">Medium / Large Farmer (&gt; 2 Hectares)</option>
+              <option value="fpo_member">FPO Member / Collective Farmer</option>
+              <option value="tenant">Tenant / Sharecropper Farmer</option>
+            </select>
+            <p class="text-[11px] text-slate-400 mt-1">Determines priority FPO pooling & loan eligibility</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: Land Verification & Khatauni Details (CRUCIAL FOR VERIFICATION) -->
+      <div class="space-y-4 pt-2">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-md bg-amber-100 text-amber-900 flex items-center justify-center text-xs font-bold">2</div>
+            <div>
+              <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">Land Holding & Khatauni KYC Verification</h2>
+              <p class="text-xs text-slate-500">खतौनी, खसरा एवं भूलेख भूमि सत्यापन विवरण</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 flex items-center gap-1">
+            <i class="fa-solid fa-file-contract text-amber-600"></i> AgriStack Auto-Check
+          </span>
+        </div>
+
+        <!-- Smart Notice Box -->
+        <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-3.5 flex items-start gap-3 text-xs text-amber-900">
+          <i class="fa-solid fa-circle-info text-amber-600 text-sm mt-0.5"></i>
+          <div>
+            <span class="font-bold">Instant e-Bhulekh Verification:</span>
+            Providing your Khatauni and Khasra number allows KisanSetu to instantly pull Cadastral survey data from the State Revenue Portal, boosting your initial <strong class="text-emerald-800">Trust Score to 90+</strong> and enabling advance escrow payouts.
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- State -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              State (राज्य) <span class="text-red-500">*</span>
+            </label>
+            <select id="farmer-state" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-700 transition">
+              <option value="MP" selected>Madhya Pradesh (मध्य प्रदेश)</option>
+              <option value="UP">Uttar Pradesh (उत्तर प्रदेश)</option>
+              <option value="MH">Maharashtra (महाराष्ट्र)</option>
+              <option value="RJ">Rajasthan (राजस्थान)</option>
+              <option value="PB">Punjab (पंजाब)</option>
+              <option value="HR">Haryana (हरियाणा)</option>
+            </select>
+          </div>
+
+          <!-- District -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              District (जिला) <span class="text-red-500">*</span>
+            </label>
+            <select id="farmer-district" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-700 transition">
+              <option value="sehore" selected>Sehore (सीहोर)</option>
+              <option value="vidisha">Vidisha (विदिशा)</option>
+              <option value="bhopal">Bhopal (भोपाल)</option>
+              <option value="dewas">Dewas (देवास)</option>
+              <option value="hoshangabad">Narmadapuram (होशंगाबाद)</option>
+            </select>
+          </div>
+
+          <!-- Tehsil / Block -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Tehsil / Sub-Division (तहसील) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="farmer-tehsil" value="Ashta / आष्टा" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Village Name -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Village / Gram Panchayat (गाँव) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="farmer-village" placeholder="e.g., Village Kothri" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition">
+          </div>
+
+          <!-- Khatauni / Khata Account Number -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Khatauni Account No. (खाता संख्या) <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <input type="text" id="farmer-khatauni" placeholder="e.g., KHT-2026/0942" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition font-mono">
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Printed on your revenue passbook</p>
+          </div>
+
+          <!-- Khasra Plot Numbers -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Khasra / Plot Nos. (खसरा संख्या) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="farmer-khasra" placeholder="e.g., 142/1, 142/2, 143" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition font-mono">
+            <p class="text-[11px] text-slate-400 mt-1">Separated by comma if multiple plots</p>
+          </div>
+        </div>
+
+        <!-- Total Land Area & Document Upload -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Total Cultivable Land Area (कुल कृषि भूमि) <span class="text-red-500">*</span>
+            </label>
+            <div class="flex gap-2">
+              <input type="number" id="farmer-land-area" step="0.1" placeholder="4.5" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition">
+              <select class="w-28 px-2.5 py-2 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 text-slate-700 font-medium">
+                <option value="acre">Acres (एकड़)</option>
+                <option value="hectare">Hectares</option>
+                <option value="bigha">Bigha (बीघा)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Upload Khatauni Copy / Land Document <span class="text-slate-400 font-normal">(Optional if auto-fetch succeeds)</span>
+            </label>
+            <div class="border border-dashed border-slate-300 hover:border-emerald-500 rounded-lg p-2.5 flex items-center justify-between bg-slate-50 hover:bg-emerald-50/40 cursor-pointer transition">
+              <div class="flex items-center gap-2 text-xs text-slate-600">
+                <i class="fa-solid fa-cloud-arrow-up text-emerald-600 text-sm"></i>
+                <span class="truncate max-w-[200px]">Upload PDF or Photo (खतौनी कॉपी)</span>
+              </div>
+              <span class="text-[11px] bg-white border border-slate-200 px-2 py-0.5 rounded text-slate-700 font-medium shadow-2xs">Browse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: Bank Account & Direct Benefit Transfer (DBT) Escrow Settlement -->
+      <div class="space-y-4 pt-2">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-md bg-blue-100 text-blue-900 flex items-center justify-center text-xs font-bold">3</div>
+            <div>
+              <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">Bank Account for Escrow Payouts (DBT)</h2>
+              <p class="text-xs text-slate-500">बैंक खाता एवं प्रत्यक्ष लाभ अंतरण (NPCI / UPI 2.0 Linked)</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+            Escrow Protected
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Bank Name -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Bank Name (बैंक का नाम) <span class="text-red-500">*</span>
+            </label>
+            <select id="farmer-bank" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-700 transition">
+              <option value="sbi">State Bank of India (SBI)</option>
+              <option value="pnb">Punjab National Bank (PNB)</option>
+              <option value="bob">Bank of Baroda</option>
+              <option value="mgb">Madhya Pradesh Gramin Bank (RRB)</option>
+              <option value="hdfc">HDFC Bank</option>
+              <option value="icici">ICICI Bank</option>
+            </select>
+          </div>
+
+          <!-- Account Number -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Bank Account Number (खाता संख्या) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="farmer-account" autocomplete="off" placeholder="Enter full bank account number" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition font-mono">
+          </div>
+
+          <!-- Confirm Account Number -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Re-enter Account Number (पुष्टि करें) <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="farmer-account-confirm" placeholder="Re-enter to confirm" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition font-mono">
+          </div>
+
+          <!-- IFSC Code -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Bank IFSC Code (आईएफएससी कोड) <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <input type="text" id="farmer-ifsc" placeholder="e.g., SBIN0001234" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 uppercase transition font-mono">
+              <span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[11px] font-medium text-slate-400">
+                Auto-Find Branch
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPI ID & DBT Checkbox -->
+        <div class="pt-1">
+          <label class="flex items-start gap-2.5 cursor-pointer">
+            <input type="checkbox" checked class="mt-0.5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 w-4 h-4">
+            <span class="text-xs text-slate-600 leading-relaxed">
+              Enable <strong>NPCI Aadhaar Payment Bridge (APB / DBT)</strong> for instant 20% farm-gate pickup advance payout directly to this account upon QR scan.
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- SECTION 4: Major Crops & Vernacular Voice Preferences -->
+      <div class="space-y-4 pt-2">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-md bg-purple-100 text-purple-900 flex items-center justify-center text-xs font-bold">4</div>
+            <div>
+              <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">Primary Crops & Voice Setup</h2>
+              <p class="text-xs text-slate-500">मुख्य फसलें एवं वॉइस मंडी असिस्टेंट सेटअप</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
+            Personalization
+          </span>
+        </div>
+
+        <!-- Crops Selection Chips -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-2">
+            Select Primary Crops Cultivated (आप कौन सी फसलें उगाते हैं?) <span class="text-red-500">*</span>
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <label class="flex items-center gap-2 p-2.5 border border-emerald-500 bg-emerald-50/60 rounded-xl cursor-pointer">
+              <input type="checkbox" checked class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
+              <div>
+                <span class="block text-xs font-bold text-emerald-950">Sharbati Wheat</span>
+                <span class="text-[10px] text-emerald-700 font-medium">शरबती गेहूँ (C-306)</span>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-2 p-2.5 border border-slate-200 hover:border-slate-300 bg-slate-50 rounded-xl cursor-pointer">
+              <input type="checkbox" class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
+              <div>
+                <span class="block text-xs font-bold text-slate-800">Desi Chana</span>
+                <span class="text-[10px] text-slate-500">चना (देसी बोल्ड)</span>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-2 p-2.5 border border-emerald-500 bg-emerald-50/60 rounded-xl cursor-pointer">
+              <input type="checkbox" checked class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
+              <div>
+                <span class="block text-xs font-bold text-emerald-950">Soybean</span>
+                <span class="text-[10px] text-emerald-700 font-medium">सोयाबीन (JS-9560)</span>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-2 p-2.5 border border-slate-200 hover:border-slate-300 bg-slate-50 rounded-xl cursor-pointer">
+              <input type="checkbox" class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
+              <div>
+                <span class="block text-xs font-bold text-slate-800">Mustard / Oilseed</span>
+                <span class="text-[10px] text-slate-500">सरसों / राई</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Vernacular Audio Dialect -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Preferred Voice & Audio Dialect (पसंदीदा बोली / भाषा)
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-emerald-700 text-xs">
+                <i class="fa-solid fa-microphone-lines"></i>
+              </span>
+              <select class="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-700 transition">
+                <option value="hi_malvi" selected>Hindi - Malvi (मध्य प्रदेश मालवी)</option>
+                <option value="hi_bundelkhandi">Hindi - Bundelkhandi (बुंदेलखंडी)</option>
+                <option value="hi_std">Standard Hindi (शुद्ध हिंदी)</option>
+                <option value="mr">Marathi (मराठी)</option>
+                <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+                <option value="en">English (English for Institutional FPOs)</option>
+              </select>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1">Allows natural voice bidding and audio SMS alerts</p>
+          </div>
+
+          <!-- Password Setup -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+              Create 4-Digit Security PIN or Password (सुरक्षा पिन) <span class="text-red-500">*</span>
+            </label>
+            <input type="password" maxlength="6" placeholder="e.g., 4 or 6 digit PIN" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white text-slate-800 transition tracking-widest font-mono">
+            <p class="text-[11px] text-slate-400 mt-1">Easy login PIN for daily market rates & payments</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verification & Legal Declaration Consent -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
+        <label class="flex items-start gap-2.5 cursor-pointer">
+          <input type="checkbox" checked class="mt-0.5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 w-4 h-4">
+          <span class="text-xs text-slate-600 leading-relaxed">
+            I hereby declare that the Land Khatauni details and Aadhaar number provided belong to me. I consent to automatic cadastral verification via <strong>AgriStack / MP Bhulekh</strong> and acknowledge the <strong>KisanSetu Smart Contract Dispute Resolution protocol</strong>.
+          </span>
+        </label>
+      </div>
+
+      <!-- Action Submission Buttons -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a href="/login" class="text-xs font-medium text-slate-500 hover:text-emerald-700 flex items-center gap-1 transition">
+          <i class="fa-solid fa-arrow-left text-[11px]"></i> Already have an account? Log In
+        </a>
+
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <button type="reset" class="w-full sm:w-auto px-5 py-2.5 border border-slate-300 hover:bg-slate-100 text-slate-700 rounded-xl text-xs font-semibold transition">
+            Clear Form
+          </button>
+          <button type="submit" class="w-full sm:w-auto px-8 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+            <span>Verify & Register as Farmer</span>
+            <i class="fa-solid fa-check"></i>
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Footer Trust Indicators -->
+    <div class="bg-slate-50 border-t border-slate-200/80 px-8 py-4 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-500">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-600"></i> 256-Bit SSL Encrypted</span>
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-landmark text-emerald-600"></i> NABARD & DBT Certified</span>
+      </div>
+      <div class="flex items-center gap-1 text-slate-400">
+        <span>Need assistance? Call Kisan Call Center toll-free: <strong>1800-180-1551</strong></span>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script src="/js/k4-firebase.js"></script>
+  <script>window.K4Firebase.autofillForms();</script>
+  <script>
+    async function handleFarmerSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const account = document.getElementById('farmer-account')?.value || '';
+      const confirm = document.getElementById('farmer-account-confirm')?.value || '';
+      if (account && confirm && account !== confirm) {
+        alert('Bank account numbers do not match.');
+        return false;
+      }
+      const details = window.K4Firebase.collectForm(form);
+      details.full_name = document.getElementById('farmer-name')?.value || '';
+      details.phone = document.getElementById('farmer-phone')?.value || '';
+      details.aadhaar = document.getElementById('farmer-aadhaar')?.value || '';
+      details.state = document.getElementById('farmer-state')?.value || '';
+      details.district = document.getElementById('farmer-district')?.value || '';
+      details.village = document.getElementById('farmer-village')?.value || '';
+      details.khatauni = document.getElementById('farmer-khatauni')?.value || '';
+      details.khasra = document.getElementById('farmer-khasra')?.value || '';
+      details.landArea = document.getElementById('farmer-land-area')?.value || '';
+      details.bank = document.getElementById('farmer-bank')?.value || '';
+      details.ifsc = document.getElementById('farmer-ifsc')?.value || '';
+      details.accountLast4 = account ? account.slice(-4) : '';
+      if (btn) {
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Saving farmer details...</span>';
+        btn.disabled = true;
+      }
+      try {
+        await window.K4Firebase.saveProfile({
+          role: 'Farmer',
+          details: details,
+          fullName: details.full_name,
+          phone: details.phone,
+          redirect: '/farmer-dashboard'
+        });
+      } catch (err) {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = '<span>Verify & Register as Farmer</span><i class="fa-solid fa-check"></i>';
+        }
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>

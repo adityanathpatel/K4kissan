@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-low":"#f0f3ff","error-container":"#ffdad6","secondary-fixed":"#ffdbcb","on-secondary":"#ffffff","on-primary-fixed":"#00210d","secondary":"#a04100","primary-fixed":"#9bf6b2","on-secondary-container":"#682800","on-secondary-fixed-variant":"#7a3000","outline":"#6f7a6f","inverse-on-surface":"#ecf1ff","on-secondary-fixed":"#341000","secondary-container":"#ff8340","outline-variant":"#becabd","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#005228","on-tertiary":"#ffffff","surface-bright":"#f9f9ff","surface-container-highest":"#d8e3fb","background":"#f9f9ff","on-error-container":"#93000a","error":"#ba1a1a","surface-tint":"#016d38","on-primary":"#ffffff","tertiary-fixed":"#ffdcc3","surface-container-high":"#dee8ff","primary-container":"#1b7a43","tertiary-fixed-dim":"#ffb77d","inverse-surface":"#263143","on-tertiary-fixed-variant":"#6e3900","on-error":"#ffffff","on-tertiary-container":"#ffe8d8","on-tertiary-fixed":"#2f1500","on-surface-variant":"#3f4940","surface":"#f9f9ff","on-primary-container":"#abffbf","inverse-primary":"#80d998","primary":"#006030","secondary-fixed-dim":"#ffb693","surface-variant":"#d8e3fb","primary-fixed-dim":"#80d998","surface-dim":"#cfdaf2","surface-container":"#e7eeff","on-background":"#111c2d","tertiary":"#7f4300","tertiary-container":"#a25700","on-surface":"#111c2d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","gutter-mobile":"1rem","space-2xl":"3rem","space-xs":"0.5rem","space-sm":"0.75rem","gutter-tablet":"1.5rem","gutter-desktop":"2rem","space-xl":"2rem","space-md":"1rem","container-max":"1280px","space-3xl":"4rem","space-2xs":"0.25rem"},"fontFamily":{"label-lg":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Inter"],"display-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"label-md":["Inter"],"body-xl":["Inter"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"display-lg":["44px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"800"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"body-xl":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-container-max mx-auto px-gutter-mobile md:px-gutter-tablet lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a href="/" class="flex items-center gap-space-xs"><img alt="K4kissan Logo" class="h-8 w-auto object-contain" src="/images/k4kissan-logo.svg"/></a></div><div class="flex items-center gap-space-md"><a href="/login" class="px-4 py-2 bg-primary text-on-primary rounded-lg text-xs font-semibold hover:bg-primary-container transition">Back to Login</a></div></div></header><main class="w-full pt-16 flex-1 bg-surface"><div class="flex flex-col w-full py-space-xl px-gutter-mobile md:px-gutter-tablet lg:px-gutter-desktop max-w-container-max mx-auto">
+<!-- Hero Header Banner -->
+<div class="relative overflow-hidden bg-primary text-on-primary rounded-2xl p-space-lg md:p-space-2xl shadow-xl">
+<div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute top-0 right-1/4 w-64 h-64 rounded-full bg-surface-container-lowest/5 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<!-- Top Pill Tag -->
+<div class="self-start inline-flex items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-primary-container/40 text-on-primary font-label-md text-label-md tracking-wider uppercase">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">local_shipping</span>
+<span>TRANSPORTER SIGN-UP PORTAL (ट्रांसपोर्टर / वाहन मालिक पंजीकरण)</span>
+</div>
+<!-- Title & Description -->
+<div class="max-w-3xl flex flex-col gap-space-xs">
+<h1 class="font-headline-xl text-headline-xl tracking-tight text-on-primary font-bold">
+          Register Verified Agricultural Transporter Fleet
+        </h1>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim/90 leading-relaxed">
+          Connect directly with institutional buyers and FPO farm clusters. Instant freight advance upon farm-gate loading QR scan, verified e-Way bills, and zero broker commissions.
+        </p>
+</div>
+<!-- Role Selected Badge -->
+<div class="inline-flex items-center gap-space-xs self-start px-space-md py-space-2xs rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>Role Selected: Transporter / Fleet Operator (ट्रांसपोर्टर)</span>
+</div>
+<!-- Step Progress Indicator -->
+<div class="mt-space-md pt-space-md border-t-0 bg-primary-container/20 rounded-xl p-space-md">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center font-label-lg text-label-lg font-bold shadow-sm shrink-0">
+              ✓
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Step 1</span>
+<span class="font-label-md text-label-md text-on-primary truncate font-medium">Driver &amp; Operator</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-lg text-label-lg font-bold shadow-sm shrink-0">
+              2
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Step 2</span>
+<span class="font-label-md text-label-md text-on-primary truncate font-medium">Sarathi &amp; VAHAN</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container text-primary-fixed-dim flex items-center justify-center font-label-lg text-label-lg shrink-0 font-bold">
+              3
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim/70 uppercase tracking-wider">Step 3</span>
+<span class="font-label-md text-label-md text-on-primary/70 truncate font-medium">Truck Specs &amp; IoT</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container text-primary-fixed-dim flex items-center justify-center font-label-lg text-label-lg shrink-0 font-bold">
+              4
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim/70 uppercase tracking-wider">Step 4</span>
+<span class="font-label-md text-label-md text-on-primary/70 truncate font-medium">Fastag &amp; Payout</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Card Form Container -->
+<form class="mt-space-lg bg-surface-container-lowest rounded-2xl shadow-sm p-space-md md:p-space-xl flex flex-col gap-space-2xl">
+<!-- Section 1: Transporter & Driver Contact Details -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-lg text-label-lg font-bold">
+            1
+          </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            TRANSPORTER &amp; DRIVER CONTACT DETAILS <span class="text-on-surface-variant font-normal text-body-md">(व्यक्तिगत एवं मोबाइल सत्यापन)</span>
+</h2>
+</div>
+<span class="px-space-sm py-space-2xs bg-error-container text-on-error-container rounded-full font-label-sm text-label-sm font-semibold uppercase">
+          Mandatory Step
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Full Name -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="transporter-name">
+            Full Name / Enterprise Name (पूरा नाम) <span class="text-error">*</span>
+</label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="transporter-name" required="" type="text" value="Surender Singh Malwa / Malwa Agro Logistics"/>
+</div>
+<!-- Mobile Number with OTP -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="mobile-no">
+            Mobile Number (मोबाइल नंबर) <span class="text-error">*</span>
+</label>
+<div class="flex gap-space-xs">
+<input class="flex-1 h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="mobile-no" required="" type="tel" value="+91 98765 43210"/>
+<button class="h-12 px-space-md bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md rounded-lg font-semibold whitespace-nowrap transition-colors flex items-center gap-space-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Send OTP</span>
+</button>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Used for real-time dispatch SMS and farm-gate load alerts</span>
+</div>
+<!-- Transporter Operator Type -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="operator-type">
+            Transporter Operator Type * (ऑपरेटर प्रकार)
+          </label>
+<div class="relative">
+<select class="w-full h-12 px-space-md appearance-none rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" id="operator-type">
+<option selected="">Single Truck Owner-Driver (एकल वाहन चालक)</option>
+<option>Fleet Operator / Transport Company (ट्रांसपोर्ट कंपनी / 5+ वाहन)</option>
+<option>FPO Aggregation Vehicle (कृषक उत्पादक संगठन वाहन)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-3 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Operating Base Hub -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="base-corridor">
+            Operating Base Hub / District (कार्यक्षेत्र / गृह जिला) <span class="text-error">*</span>
+</label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="base-corridor" required="" type="text" value="Sehore - Ashta - Bhopal Corridor, Madhya Pradesh"/>
+</div>
+</div>
+</div>
+<!-- Section 2: SARATHI Driving Licence & VAHAN RC Verification -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-lg text-label-lg font-bold">
+            2
+          </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            SARATHI DRIVING LICENCE &amp; VAHAN RC VERIFICATION <span class="text-on-surface-variant font-normal text-body-md">(सारथी डीएल एवं वाहन सत्यापन)</span>
+</h2>
+</div>
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs bg-primary-fixed/40 text-on-primary-fixed-variant rounded-full font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          MoRTH VAHAN &amp; Sarathi e-KYC
+        </span>
+</div>
+<!-- Informational Notice Banner -->
+<div class="flex items-start gap-space-sm p-space-md bg-secondary-fixed/50 text-on-secondary-fixed rounded-xl">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-secondary">Instant Parivahan Verification</span>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant leading-relaxed">
+            Providing valid Driving Licence and Commercial Registration Certificate (RC) enables instant fleet dispatch approval, high Trust Score (90+), and automatic digital E-Way Bill generation.
+          </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- DL Number -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="dl-number">
+            Driving Licence (DL) Number <span class="text-error">*</span>
+</label>
+<div class="flex gap-space-xs">
+<input class="flex-1 h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary uppercase tracking-wider" id="dl-number" required="" type="text" value="MP-04-2018-0045892"/>
+<button class="h-12 px-space-md bg-primary text-on-primary font-label-md text-label-md rounded-lg font-semibold hover:bg-primary-container transition-colors flex items-center gap-space-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>SARATHI VERIFY</span>
+</button>
+</div>
+</div>
+<!-- DL Validity -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="dl-validity">
+            DL Validity / Expiry Date <span class="text-error">*</span>
+</label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="dl-validity" required="" type="text" value="14/08/2034 - HMV / Commercial Heavy Goods"/>
+</div>
+<!-- Commercial Vehicle Reg No -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="vehicle-no">
+            Commercial Vehicle Registration No. (गाड़ी नंबर) <span class="text-error">*</span>
+</label>
+<div class="flex gap-space-xs">
+<input class="flex-1 h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary uppercase tracking-widest font-semibold" id="vehicle-no" required="" type="text" value="MP-09-EA-2104"/>
+<span class="inline-flex items-center px-space-md bg-primary-fixed text-on-primary-fixed font-label-md text-label-md rounded-lg font-semibold gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">cloud_done</span>
+              VAHAN FETCHED
+            </span>
+</div>
+</div>
+<!-- Chassis Number -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="chassis-no">
+            Vehicle Chassis Number (Last 5 digits) <span class="text-error">*</span>
+</label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary tracking-widest" id="chassis-no" maxlength="5" required="" type="text" value="48291"/>
+</div>
+<!-- State & RTO -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="rto-office">
+            State &amp; Regional Transport Office (RTO) <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 px-space-md appearance-none rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" id="rto-office">
+<option selected="">MP-09 Indore RTO</option>
+<option>MP-04 Bhopal RTO</option>
+<option>MP-37 Sehore RTO</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-3 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Upload RC & Fitness -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+            Upload RC &amp; Fitness Certificate <span class="text-on-surface-variant font-normal">(Optional if auto-fetch succeeds)</span>
+</label>
+<div class="flex items-center gap-space-sm h-12 px-space-md rounded-lg bg-surface-container-low shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+<span class="material-symbols-outlined text-primary text-[22px]">description</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate flex-1">MP09EA2104_RC_Fitness.pdf</span>
+<button class="px-space-sm py-space-2xs rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors" type="button">
+              Re-Upload
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Truck Specifications, Capacity & Cargo Protection -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-lg text-label-lg font-bold">
+            3
+          </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            TRUCK SPECIFICATIONS, CAPACITY &amp; CARGO PROTECTION <span class="text-on-surface-variant font-normal text-body-md">(वाहन क्षमता एवं सुरक्षा)</span>
+</h2>
+</div>
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs bg-primary-fixed/40 text-on-primary-fixed-variant rounded-full font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">agriculture</span>
+          Farm-Gate Ready
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Body Type -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="body-type">
+            Vehicle Body Type <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 px-space-md appearance-none rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" id="body-type">
+<option selected="">Eicher 17ft Open High-Side (आयशर 17 फीट)</option>
+<option>Tata 407 / Ultra (टुकड़ा 4-6 टन)</option>
+<option>10-Wheeler / 12-Wheeler Heavy Multi-Axle (16-25 टन)</option>
+<option>Mahindra Bolero Maxi Truck (पिकअप 1.5-2 टन)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-3 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Max Payload Capacity -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="payload-capacity">
+            Max Payload Capacity <span class="text-error">*</span>
+</label>
+<div class="flex gap-space-xs">
+<input class="flex-1 h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="payload-capacity" required="" type="number" value="120"/>
+<div class="relative min-w-[140px]">
+<select class="w-full h-12 px-space-md appearance-none rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option selected="">Quintals (क्विंटल)</option>
+<option>Metric Tonnes (टन)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-3 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Grain Protection Equipment Chips -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">
+          Grain Protection Equipment (Select all applicable)
+        </span>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">Waterproof Heavy Tarpaulin (तिरपाल)</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">Grain Leak-Proof Side Panels</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">Cargo Lash Nets &amp; Straps</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">Clean Dry Grain Flooring</span>
+</label>
+</div>
+</div>
+<!-- GPS Tracking & IoT Options -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">
+          GPS Tracking &amp; IoT E-Lock Availability
+        </span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<label class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-low cursor-pointer shadow-sm">
+<input checked="" class="mt-1 w-4 h-4 text-primary focus:ring-primary accent-primary" name="gps-spec" type="radio"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-primary">AIS-140 Compliant GPS</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Live telemetry with government panic button sync</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer shadow-sm">
+<input class="mt-1 w-4 h-4 text-primary focus:ring-primary accent-primary" name="gps-spec" type="radio"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Smartphone App GPS</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Real-time driver phone GPS tracking</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer shadow-sm">
+<input class="mt-1 w-4 h-4 text-primary focus:ring-primary accent-primary" name="gps-spec" type="radio"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Temp / Humidity Probe</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cold chain / sensitive cargo telemetry</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Section 4: Fastag ID & Bank Account for Escrow Freight Payouts -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-lg text-label-lg font-bold">
+            4
+          </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            FASTAG ID &amp; BANK ACCOUNT FOR ESCROW FREIGHT PAYOUTS <span class="text-on-surface-variant font-normal text-body-md">(भाड़ा भुगतान एवं फास्टैग)</span>
+</h2>
+</div>
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs bg-primary-fixed/40 text-on-primary-fixed-variant rounded-full font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+          Escrow Guaranteed
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Fastag ID -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="fastag-id">
+            Commercial Fastag Wallet ID / Barcode <span class="text-error">*</span>
+</label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary uppercase tracking-wider" id="fastag-id" required="" type="text" value="NETC-FASTAG-98214432"/>
+<span class="font-body-sm text-body-sm text-primary font-medium">Auto-reconciles toll deductions directly on verified trip sheets</span>
+</div>
+<!-- Bank Name -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="bank-name">
+            Bank Name <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 px-space-md appearance-none rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" id="bank-name">
+<option selected="">State Bank of India (SBI)</option>
+<option>Bank of Baroda</option>
+<option>HDFC Bank</option>
+<option>Punjab National Bank (PNB)</option>
+<option>Canara Bank</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-3 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Account Number -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="acc-num">
+            Bank Account Number <span class="text-error">*</span>
+</label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="acc-num" required="" type="password" value="384920194829"/>
+</div>
+<!-- Re-enter Account Number -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="re-acc-num">
+            Re-enter Account Number <span class="text-error">*</span>
+</label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="re-acc-num" required="" type="text" value="384920194829"/>
+</div>
+<!-- IFSC Code -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="ifsc-code">
+              Bank IFSC Code <span class="text-error">*</span>
+</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Auto-Find Branch</a>
+</div>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary uppercase tracking-widest" id="ifsc-code" required="" type="text" value="SBIN0001234"/>
+</div>
+<!-- Preferred Operating Rate Benchmark -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="operating-rate">
+            Preferred Operating Rate Benchmark
+          </label>
+<input class="h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-primary" id="operating-rate" type="text" value="₹14.50 / Quintal / 10 km (Standard Corridor Rate)"/>
+</div>
+</div>
+<!-- Advance Checkbox Notice -->
+<div class="mt-space-xs p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm">
+<input checked="" class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary accent-primary shrink-0" id="advance-payout" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface cursor-pointer leading-normal" for="advance-payout">
+          Enable Automated 20% Farm-Gate Loading Advance &amp; Toll Auto-Reimbursement directly to this bank account upon farmer digital weighbridge QR scan.
+        </label>
+</div>
+</div>
+<!-- Section 5: Compliance Declaration & Submission -->
+<div class="flex flex-col gap-space-lg pt-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-sm">
+<input checked="" class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary accent-primary shrink-0" id="compliance-check" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer leading-relaxed" for="compliance-check">
+          I hereby certify that the vehicle RC, Driving Licence, and insurance details are authentic and valid. I agree to the KisanSetu Agricultural Dispatch Protocol, GPS transit telemetry, and Auto-Arbiter demurrage standards.
+        </label>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<a class="font-label-md text-label-md font-semibold text-primary hover:underline flex items-center gap-space-2xs" href="/login">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Already registered? Transporter Log In
+        </a>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none h-12 px-space-lg rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold transition-colors" type="reset">
+            Clear Form
+          </button>
+<button class="flex-1 sm:flex-none h-12 px-space-xl rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-xs" type="submit">
+<span>Register &amp; Verify Transporter Fleet</span>
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</form>
+<!-- Bottom Trust Anchors & Verification Badges -->
+<div class="mt-space-xl flex flex-wrap items-center justify-center gap-x-space-xl gap-y-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+<span>256-Bit SSL Encrypted</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>MoRTH VAHAN &amp; Sarathi Verified</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-primary text-[18px]">toll</span>
+<span>NPCI Fastag Ready</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">call</span>
+<span>Toll-free Logistics Desk: <strong class="text-primary font-bold">1800-180-2444</strong></span>
+</div>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+<script src="/js/k4-firebase.js"></script><script>window.K4Firebase.autofillForms();</script>
+<script>
+  document.querySelector('form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const details = window.K4Firebase.collectForm(form);
+    if (btn) {
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> <span>Saving transporter details...</span>';
+      btn.disabled = true;
+    }
+    try {
+      await window.K4Firebase.saveProfile({
+        role: 'Transporter',
+        details: details,
+        redirect: '/map'
+      });
+    } catch (err) {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Verify Fleet & Register</span>';
+      }
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.03)] py-space-lg"><div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-tablet lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-wrap items-center justify-center md:justify-start gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[18px]">lock</span><span class="font-label-sm text-label-sm font-semibold">256-Bit SSL Encrypted</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[18px]">directions_car</span><span class="font-label-sm text-label-sm font-semibold">VAHAN Certified</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[18px]">toll</span><span class="font-label-sm text-label-sm font-semibold">NPCI FASTag Ready</span></div></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[18px]">call</span><span class="font-label-md text-label-md">Transporter Helpline: <a class="font-label-md text-label-md font-bold text-primary hover:underline" href="tel:18001802444">1800-180-2444</a> (Toll Free)</span></div></div></footer></body></html>
